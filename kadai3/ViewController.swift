@@ -9,7 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-
     @IBOutlet private weak var firstText: UITextField!
     @IBOutlet private weak var secondText: UITextField!
     @IBOutlet private weak var firstNumber: UILabel!
@@ -20,7 +19,7 @@ class ViewController: UIViewController {
 
     @IBAction func calculatedButton(_ sender: Any) {
 
-        //UITextFieldの型を変換
+        // UITextFieldの型を変換
         let firstTextNumber = Int(firstText.text ?? "") ?? 0
         let secondTextNumber = Int(secondText.text ?? "") ?? 0
 
@@ -29,7 +28,7 @@ class ViewController: UIViewController {
 
         let resultText: String
 
-        //UISwitchによる符号の切り替え
+        // UISwitchによる符号の切り替え
         if firstSwitch.isOn {
             firstSwitchNumber = firstTextNumber * -1
         } else {
@@ -42,7 +41,7 @@ class ViewController: UIViewController {
             secondSwitchNumber = secondTextNumber
         }
 
-        //計算して各UILabelに表示
+        // 計算して各UILabelに表示
         firstNumber.text = String(firstSwitchNumber)
 
         secondNumber.text = String(secondSwitchNumber)
@@ -50,7 +49,4 @@ class ViewController: UIViewController {
         resultText = String(firstSwitchNumber + secondSwitchNumber)
         resultLabel.text = resultText
     }
-    
-
 }
-
